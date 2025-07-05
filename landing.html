@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>LikesHub - 您的跨平台社交媒体点赞收藏夹</title>
+    <meta name="description" content="LikesHub 是一款浏览器插件，可以自动收集和管理您在小红书、X(Twitter)、微博等平台的点赞内容，构建您的私人灵感宝库。安全、私密、高效。">
+    <meta name="keywords" content="点赞收藏, 小红书点赞, X点赞, 微博点赞, 浏览器插件, LikesHub, 灵感收集, 数据备份, 社交媒体管理">
+    <meta name="author" content="LikesHub Team">
+
+    <!-- Favicon -->
+    <link rel="icon" href="public/icon/128.png">
+
+    <!-- TailwindCSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Fonts (optional, but enhances look) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .cta-button-gradient {
+            background: linear-gradient(135deg, rgb(244, 188, 98), rgb(217, 158, 70));
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 8s infinite ease-in-out;
+        }
+        .animation-delay-n4s {
+            animation-delay: -4s;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-700 antialiased">
+
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden">
+        <div class="absolute top-0 -left-80 w-[40rem] h-[40rem] bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute bottom-0 -right-80 w-[40rem] h-[40rem] bg-sky-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-n4s"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm border-b border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 text-xl font-bold text-slate-800">
+                    <img src="public/icon/64.png"/>
+                    <span>LikesHub</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-32">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 tracking-tight mb-4">
+                    那个很棒的点赞，还记得在哪找吗？
+                </h1>
+                <p class="text-lg md:text-xl text-slate-500 max-w-3xl mx-auto mb-8">
+                    别再纠结于在小红书、X还是微博之间来回翻找。LikesHub 为您汇集所有平台的点赞，构建一个属于您自己的、可随时搜索的灵感宝库。
+                </p>
+                <div id="install" class="mt-10 max-w-2xl mx-auto flex flex-col gap-6 px-4">
+                    <h1 class="text-center font-bold">安装浏览器插件</h1>
+                    <div class="flex md:flex-row flex-col gap-6 justify-center">
+                        <a href="https://chromewebstore.google.com/detail/likeshub/hfoohecomeifgmbclmkabpaolmbobpij" target="_blank" class="group block p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200/80 text-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <div class="flex items-center gap-4 justify-center">
+                                <img src="public/chrome.png" alt="Chrome" class="h-12 w-12"/>
+                                <div>
+                                    <p class="font-bold text-xl">Chrome安装</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Point Section -->
+        <section class="py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-2xl font-bold text-slate-700">是否曾为了一个点赞，翻遍所有App？</h2>
+                <p class="text-lg text-slate-500 mt-4 max-w-2xl mx-auto">
+                    看到一篇装修攻略，随手点了赞，几天后想找却忘了是在小红书还是微博？刷到一个超酷的AI工具，点赞后想用时，却在多个平台之间来回寻找？<br class="hidden md:block">
+                    <span class="font-semibold text-amber-600">LikesHub 就是为此而生。</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 md:py-28">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800">专为解决"找不到"而设计</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white/60 p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+                        <div class="text-4xl mb-4">🔄</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">一键同步</h3>
+                        <p class="text-slate-500">在点赞页点击按钮，即可自动滚动采集(小红书)。也支持直接通过插件采集如: 微博,X(需要提前登录)，灵活高效。</p>
+                    </div>
+                    <div class="bg-white/60 p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+                        <div class="text-4xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">强大搜索</h3>
+                        <p class="text-slate-500">跨平台全文搜索，按标题、作者或来源筛选，瞬间找到目标内容。</p>
+                    </div>
+                    <div class="bg-white/60 p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">沉浸浏览</h3>
+                        <p class="text-slate-500">瀑布流卡片式设计，干净、纯粹的浏览界面，让您专注于内容本身。</p>
+                    </div>
+                    <div class="bg-white/60 p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center">
+                        <div class="text-4xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">数据私有</h3>
+                        <p class="text-slate-500">所有数据100%存储在您的本地电脑，我们绝不上传，您的隐私安全无忧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Platforms -->
+        <section class="py-12 bg-white/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center font-semibold text-slate-500 mb-10">目前已支持以下平台</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-slate-50/80 p-6 rounded-xl border border-slate-200/40 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <img src="public/xhs.png" alt="小红书 logo" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800 mb-2">小红书</h4>
+                        <p class="text-sm text-slate-500 mb-3">xiaohongshu.com</p>
+                        <p class="text-xs text-slate-600 mb-3">支持自动滚动采集点赞内容</p>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">已支持</span>
+                    </div>
+                    <div class="bg-slate-50/80 p-6 rounded-xl border border-slate-200/40 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <img src="public/x.png" alt="X (Twitter) logo" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800 mb-2">X (Twitter)</h4>
+                        <p class="text-sm text-slate-500 mb-3">x.com</p>
+                        <p class="text-xs text-slate-600 mb-3">支持插件直接采集，高效快速</p>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">已支持</span>
+                    </div>
+                    <div class="bg-slate-50/80 p-6 rounded-xl border border-slate-200/40 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <img src="public/wb.png" alt="微博 logo" class="w-12 h-12 object-contain" />
+                        </div>
+                        <h4 class="font-semibold text-lg text-slate-800 mb-2">微博</h4>
+                        <p class="text-sm text-slate-500 mb-3">weibo.com</p>
+                        <p class="text-xs text-slate-600 mb-3">支持插件直接采集，高效快速</p>
+                        <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">已支持</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-20 md:py-28 bg-white/50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800">三步开启您的灵感之旅</h2>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-start gap-8 md:gap-12">
+                    <div class="text-center flex-1">
+                        <div class="text-white text-2xl font-bold w-16 h-16 cta-button-gradient rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">安装插件</h3>
+                        <p class="text-slate-500">从浏览器商店一键安装 LikesHub 插件</p>
+                    </div>
+                    <div class="w-full md:w-auto self-center h-px md:h-20 w-20 bg-slate-200 border-dashed border-t-2 md:border-l-2 md:border-t-0 my-4 md:my-0"></div>
+                    <div class="text-center flex-1">
+                        <div class="text-white text-2xl font-bold w-16 h-16 cta-button-gradient rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">采集点赞</h3>
+                        <p class="text-slate-500">访问支持的平台，根据提示点击按钮，同步您的点赞数据</p>
+                    </div>
+                    <div class="w-full md:w-auto self-center h-px md:h-20 w-20 bg-slate-200 border-dashed border-t-2 md:border-l-2 md:border-t-0 my-4 md:my-0"></div>
+                    <div class="text-center flex-1">
+                        <div class="text-white text-2xl font-bold w-16 h-16 cta-button-gradient rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-2">随时查阅</h3>
+                        <p class="text-slate-500">点击插件图标，所有点赞已为您整齐收录，随时搜索和浏览</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 md:py-28">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800">常见问题</h2>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg text-slate-800 mb-2">这个插件是免费的吗？</h3>
+                        <p class="text-slate-600">是的，LikesHub 目前完全免费。</p>
+                    </div>
+                    <hr class="border-slate-200/80">
+                    <div>
+                        <h3 class="font-semibold text-lg text-slate-800 mb-2">我的点赞数据安全吗？会被上传到服务器吗？</h3>
+                        <p class="text-slate-600">您的数据绝对安全。LikesHub 将所有点赞数据存储在您自己电脑的浏览器本地存储中。数据不会离开您的电脑，我们不会访问您的任何信息。</p>
+                    </div>
+                    <hr class="border-slate-200/80">
+                    <div>
+                        <h3 class="font-semibold text-lg text-slate-800 mb-2">如果我更换了电脑，数据可以同步吗？</h3>
+                        <p class="text-slate-600">由于数据是本地存储的，目前暂不支持跨设备同步。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/50 border-t border-slate-200/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-slate-500">
+            <p>&copy; 2025 LikesHub .</p>
+            <div class="mt-2">
+                <a href="https://wrcoding.github.io/likeshub-privacy-policy/privacy-policy.html" target="_blank" class="hover:text-amber-500 transition-colors">隐私政策</a>
+                <span class="mx-2">&middot;</span>
+                <a href="https://t4njdi9nmn.feishu.cn/share/base/form/shrcnIGxpXNyvVVVbSW2VltSPyb" target="_blank" class="hover:text-amber-500 transition-colors">联系我们</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html> 
